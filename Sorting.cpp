@@ -5,7 +5,7 @@ using namespace std;
 
 //SORTING!!
 
-//1. selection_sort
+//1. selection_sort | Time complexity: O(n²) | Space Complexity: O(1)
 void selection_sort(vector<int> &arr, int n) {
   // selection sort
   for (int i = 0; i < n - 1; i++) {
@@ -21,7 +21,7 @@ void selection_sort(vector<int> &arr, int n) {
   }
 }
 
-//2. Bubble_sort
+//2. Bubble_sort | Time complexity: O(n²) (Worst/Avg) / O(n) (Best) | Space Complexity: O(1)
 void bubble_sort(vector<int> &arr, int n) {
     // bubble sort
     for (int i = n - 1; i >= 0; i--) {
@@ -35,7 +35,7 @@ void bubble_sort(vector<int> &arr, int n) {
     }
 }
 
-//3. Bubble_sort_recursion
+//3. Bubble_sort_recursion | Time complexity: O(n²) (Worst/Avg) / O(n) (Best) | Space Complexity: O(n)
 void bubble_sort_recursion(vector<int> &arr, int n) {
     // Base Case: range == 1.
     if (n == 1) return;
@@ -57,7 +57,7 @@ void bubble_sort_recursion(vector<int> &arr, int n) {
     bubble_sort_recursion(arr, n - 1);
 }
 
-//4. Insertion_sort
+//4. Insertion_sort | Time complexity: O(n²) (Worst/Avg) / O(n) (Best) | Space Complexity: O(1)
 void insertion_sort(vector<int> &arr, int n) {
     for (int i = 0; i <= n - 1; i++) {
         int j = i;
@@ -70,7 +70,7 @@ void insertion_sort(vector<int> &arr, int n) {
     }
 }
 
-//5. Insertion_sort_recursion
+//5. Insertion_sort_recursion | Time complexity: O(n²) (Worst/Avg) / O(n) (Best) | Space Complexity: O(n)
 void insertion_sort_recursion(vector<int> &arr, int i, int n) {
 
     // Base Case: i == n.
@@ -87,7 +87,7 @@ void insertion_sort_recursion(vector<int> &arr, int i, int n) {
     insertion_sort_recursion(arr, i + 1, n);
 }
 
-//6. Merge_sort
+//6. Merge_sort | Time complexity: O(n log n) | Space Complexity: O(n)
 void merge(vector<int> &arr, int low, int mid, int high){
     vector<int> temp;
     int left = low;
@@ -127,7 +127,7 @@ void merge_sort(vector<int> &arr, int low, int high){
     merge(arr, low, mid, high);
 }
 
-//7. Quick_sort
+//7. Quick_sort | Time complexity: O(n²) (Worst) / O(n log n) (Best/Avg) | Space Complexity: O(n)
 int partition(vector<int> &arr, int low, int high){
     int pivot = arr[low];
     int i = low;
