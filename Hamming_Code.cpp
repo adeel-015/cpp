@@ -6,11 +6,11 @@ using namespace std;
 int check_parity(int n,int i,int code[])        
 {
     int p=0,k;
-    for(int j=i;j<=n;j=k+i)
+    for(int j=i;j<=n;j=k+i) // outer loop - finding parity bits
     {
         for(k=j;k<j+i && k<=n;k++)        //for i=1 ->bits=1,3,5,7,9,11    for i=2 ->bits 2,3,6,7,10,11
         {                    //i is parity bit position
-            if(code[k]==1)
+            if(code[k]==1)    //counting no. of 1s
             p++;
         }
     }
@@ -22,15 +22,15 @@ int check_parity(int n,int i,int code[])
 
 void hamming_code(int data[], int num)
 {
-    int r=0,m=0,n,j=1,c,code[10];
+    int r=0,m=0,n,j=1,c,code[10];    // r = redundant/parity bits , m = r , n = size , j = loop , c = correction/error , code[10] = codeword
     
     while((r+num+1)>(pow(2,r)))            //calculating no. of parity/redundant bits
         r++;
 
     n=num+r;                    //adding no. of redundant bits to array size
-    for(int i=1;i<=n;i++)
+    for(int i=1;i<=n;i++)        //iterating through hamming code
     {
-        if(i==pow(2,m) && m<=r)
+        if(i==pow(2,m) && m<=r)        // parity_bits
         {
             code[i]=0;            //initializing all the bit position of power 2 to zero
             m++;
@@ -42,6 +42,8 @@ void hamming_code(int data[], int num)
         }
     }
 
+    // Error Detection/Correction
+    
     m=0;
     for(int i=1;i<=n;i++)
     {
@@ -74,7 +76,7 @@ void hamming_code(int data[], int num)
     else
     {
         cout<<"\nThere is error in bit "<<(n-c)+1<<"\nThe corrected code is: ";
-        if(code[c]==1)
+        if(code[c]==1)        // flipping bits
             code[c]=0;
         else
             code[c]=1;
