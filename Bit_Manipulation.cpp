@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//Decimal to Binary (Time and Space Complexity --> O(log n))
+//Decimal to Binary (Time and Space Complexity: O(log n))
 vector<int> decbinary(int n){
     vector<int> result;
     while (n>0){
@@ -14,7 +14,7 @@ vector<int> decbinary(int n){
     return result;
 }
 
-// Binary to Decimal (Time and Space Complexity --> O(log n))
+// Binary to Decimal (Time Complexity: O(log n) | Space Complexity : O(1))
 int bin(vector<int> n){
     int ans = 0, pow2 = 1;
     for (int i=0;i<n.size();i++){
